@@ -58,3 +58,7 @@ int main(void) {
 }
 ```
 Compile the code and burn it to your MCU (e.g. use AVR Studio). And that is all, enjoy and have fun!
+
+License
+========
+This project and its source code is released under [GPL](http://www.gnu.org/copyleft/gpl.html) license.
