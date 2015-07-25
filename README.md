@@ -2,7 +2,7 @@
 
 An improved USART library for Arduino and ATmega MCUs supporting UART/USART communication.
 It has a flash footprint between 2476 to 2946 bytes, depending on the number of used UART/USART ports.
-It has a RAM usage of 56 to 194 bytes, without the buffer (the buffer is adjustable), depending on the number of used UART/USART ports.
+It has a RAM usage of 56 to 194 bytes, without the buffer (the buffer max buffer length is adjustable), depending on the number of used UART/USART ports.
 
 ##Advantages
 
