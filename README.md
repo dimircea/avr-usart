@@ -84,7 +84,6 @@ void loop() {
 
 
 ##AvrStudio example code
-========
 ```
 #include "Usart.h"
 
@@ -106,4 +105,4 @@ int main(void) {
 ```
 ##License
 
-This project and its source code is released under [GPL](http://www.gnu.org/copyleft/gpl.html) license.
+This project and its source code is released under [MIT](http://opensource.org/licenses/MIT) license.
