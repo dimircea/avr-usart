@@ -1,6 +1,6 @@
 /*
  * Define a collections of methods and utilities
- * which are to be used with most applications.
+ * which can be used with many applications.
  *
  * @file Base.h
  * @version 1.0
@@ -10,10 +10,8 @@
 
 
 
-#ifndef BASE_H_
-#define BASE_H_
-
-#define F_CPU 9216000
+#ifndef UTIL_H_
+#define UTIL_H_
 
 #include <stdlib.h>
 #include <stdint.h>
