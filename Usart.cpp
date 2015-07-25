@@ -128,20 +128,20 @@ Usart::~Usart() {
 void Usart::setFrameLength( UsartFrameLengthEL frameLength) {
   switch ( frameLength) {
     case UsartFrameLengthEL::FIVE_BITS: 
-      // set data transmission mode: 8-bit (UCSZn2 = 0; UCSZn1 = 0; UCSZn0 = 0;)
+      // set data transmission mode: 5-bit (UCSZn2 = 0; UCSZn1 = 0; UCSZn0 = 0;)
       *(this->ucsrc) &= ~(1 << this->ucsz0) | ~(1 << this->ucsz1); 
       // UCSZn2 bit is located in UCSRnB registry!
       *(this->ucsrb) &= ~(1 << this->ucsz2);      
     break;
     case UsartFrameLengthEL::SIX_BITS: 
-      // set data transmission mode: 8-bit (UCSZn2 = 0; UCSZn1 = 0; UCSZn0 = 1;)
+      // set data transmission mode: 6-bit (UCSZn2 = 0; UCSZn1 = 0; UCSZn0 = 1;)
       *(this->ucsrc) |= (1 << this->ucsz0);
       *(this->ucsrc) &= ~(1 << this->ucsz1);  
       // UCSZn2 bit is located in UCSRnB registry!
       *(this->ucsrb) &= ~(1 << this->ucsz2); 
     break;
     case UsartFrameLengthEL::SEVEN_BITS: 
-      // set data transmission mode: 8-bit (UCSZn2 = 0; UCSZn1 = 1; UCSZn0 = 0;)
+      // set data transmission mode: 7-bit (UCSZn2 = 0; UCSZn1 = 1; UCSZn0 = 0;)
       *(this->ucsrc) &= ~(1 << this->ucsz0);
       *(this->ucsrc) |= (1 << this->ucsz1);  
       // UCSZn2 bit is located in UCSRnB registry!
@@ -154,7 +154,7 @@ void Usart::setFrameLength( UsartFrameLengthEL frameLength) {
       *(this->ucsrb) &= ~(1 << this->ucsz2);      
     break;
     case UsartFrameLengthEL::NINE_BITS: 
-      // set data transmission mode: 8-bit (UCSZn2 = 1; UCSZn1 = 1; UCSZn0 = 1;)
+      // set data transmission mode: 9-bit (UCSZn2 = 1; UCSZn1 = 1; UCSZn0 = 1;)
       *(this->ucsrc) |= (1 << this->ucsz0) | (1 << this->ucsz1);  
       // UCSZn2 bit is located in UCSRnB registry!
       *(this->ucsrb) |= (1 << this->ucsz2); 
@@ -659,4 +659,4 @@ void rxVector( uint8_t udr, Usart usart) {
   ISR( USART3_RX_vect) {
     rxVector( UDR3, USART3);
   };
-#endif*/
+#endif
