@@ -33,13 +33,13 @@ You may use this site [AVR Baud Rate Calculator](http://wormfood.net/avrbaudcalc
 
 The global `USART/USARTn`, n = { 1, 2, 3}, objects allows you to use the USART communication. The following methods are available:
 
-* `void void begin( const uint32_t baud, uint16_t rxBuffMaxLen, UsartModeEL mode)` - start communication with a specified baud rate, receive buffer length (default = 64bytes) and communication mode (asynchronous normal, asynchronous double speed which is also the default value, and synchronous modes).  Communication mode parameter (`mode`) requires values from `UsartFrameLengthEL::xxx`.
-* `void setFrameLength( UsartFrameLengthEL frameLength)` - spoecify frame length (supports: 5bits, 6bits, 7bits and 8 bits). Use `UsartFrameLengthEL::xxx` as parameter.
+* `void void begin( const uint32_t baud, uint16_t rxBuffMaxLen, UsartModeEL mode)` - start communication with a specified baud rate, receive buffer length (default = 64bytes) and communication mode (asynchronous normal, asynchronous double speed which is also the default value, and synchronous modes).  Communication mode parameter (`mode`) requires values from `UsartModeEL::xxx`.
+* `void setFrameLength( UsartFrameLengthEL frameLength)` - allows to specify the frame length (supports: 5bits, 6bits, 7bits and 8 bits). Use `UsartFrameLengthEL::xxx` as parameter.
 * `UsartFrameLengthEL getFrameLength()` - read the currently used frame length
-* `void setStopBit( UsartStopBitEL stopBit)` - set the stop bits number ( supports: 1bit and 2bits). Use `UsartStopBitEL::xxx` as parameter.
+* `void setStopBit( UsartStopBitEL stopBit)` - allows to specify the number of stop bits ( supports: 1bit and 2bits). Use `UsartStopBitEL::xxx` as parameter.
 * `UsartStopBitEL getStopBit()` - reads the currently used stop bits number;
-* `void setParity( UsartParityEL parity)` - set the parity mode (supports: none, even and odd). Use `UsartParityEL::xxx` as parameter.
-* `UsartParityEL getParity()` - reads the currently used sparity mode
+* `void setParity( UsartParityEL parity)` - allows to specify the parity mode (supports: none, even and odd). Use `UsartParityEL::xxx` as parameter.
+* `UsartParityEL getParity()` - reads the currently used parity mode
 * `void writeByte( uint8_t ub)` - write a single byte of data
 * `void writeBytes( uint8_t* data, const uint16_t dataLen)` - write a set of bytes
 * `void write( const char* data)` - write a String ( char pointer not String object!)
