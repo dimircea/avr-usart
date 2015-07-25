@@ -1,11 +1,11 @@
-# avr-usart
+## avr-usart
 
 An improved USART library for Arduino and ATmega MCUs supporting UART/USART communication.
 It has a flash footprint between 2476 to 2946 bytes, depending on the number of used UART/USART ports.
 It has a RAM usage of 56 to 194 bytes, without the buffer (the buffer is adjustable), depending on the number of used UART/USART ports.
 
-Advantages
-========
+##Advantages
+
  - allows the usage of up to 4 UART/USART ports named USART, USART1, USART2 and USART3
  - the buffer can be adjusted (now uses dynamic memory allocation, but a version using stack comes soon)
  - allows to set frame length, stop bits number and parity
@@ -14,14 +14,14 @@ Advantages
  - allows control over the buffer with the decision of when to delete the data which is read
  - works with Arduino IDE (v1.6.5+) but also with AvrStudio (v6.1+)
  
-Supported MCUs and Arduino boards
-========
+##Supported MCUs and Arduino boards
+
  - ATmega328P and Arduino UNO v3
  - ATmega2560 and Arduino MEGA2560
  - currently under test... Arduino DUE
 
-How to use it
-========
+##How to use it
+
 This library requires C++11. To use it with the Arduino IDE, a compiler flag needs to be added. Navigate to your `arduino\hardware\arduino\avr` folder and edit the `platform.txt` file by adding the `-std=gnu++11` flag at the end of the line `compiler.cpp.flags=...`. Then save the file, restart Arduino IDE and you are ready to go.
 
 If Arduino IDE is not used, the `F_CPU` constant needs to be defined. When using Arduino IDE you need not to do this, and actually you are adviced to skip this definition. This constant specifies the MCU frequency (actually the crystal/oscilator frequency) in Hertz, and is used internally for various real-time purposes. For example, with a 16MHz oscillator/crystal this is defined as:
@@ -58,8 +58,8 @@ The global `USART/USARTn`, n = { 1, 2, 3}, objects allows you to use the USART c
 
 There is still some room for optimisation, but actually the footprint in both, Flash and RAM memory is a better than the Arduino Serial library. In addition, enhanced features as described above are provided.
 
-Arduino example code
-========
+##Arduino example code
+
 ```
 #include "Usart.h"
 
@@ -83,7 +83,7 @@ void loop() {
 ```
 
 
-AvrStudion example code
+##AvrStudio example code
 ========
 ```
 #include "Usart.h"
@@ -104,6 +104,6 @@ int main(void) {
   }
 }
 ```
-License
-========
+##License
+
 This project and its source code is released under [GPL](http://www.gnu.org/copyleft/gpl.html) license.
